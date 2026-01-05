@@ -70,3 +70,121 @@ flowchart LR
 
 ## Project Outcome
 - ### 20XX 년 OO학술대회 
+
+# 5. Commit & Pull Request Rule (형상 관리 규칙)
+
+본 프로젝트는 **협업 효율성과 변경 이력 추적성 확보**를 위해  
+**Conventional Commit 규칙 + GitHub Pull Request 기반 워크플로우**를 적용한다.
+
+---
+
+## 5.1 Commit Message Convention
+
+커밋 메시지는 다음 형식을 따른다.
+
+```
+type(scope): subject
+```
+
+### (1) Commit Type 정의
+
+| Type     | 설명                                      |
+|----------|-------------------------------------------|
+| feat     | 새로운 기능 추가                          |
+| fix      | 버그 수정                                 |
+| refactor | 기능 변경 없는 코드 구조 개선             |
+| docs     | 문서 수정 (README, 설계 문서 등)          |
+| style    | 코드 포맷/스타일 수정 (로직 변경 없음)    |
+| test     | 테스트 코드 추가 또는 수정                |
+| chore    | 빌드, 설정, 의존성 등 기타 작업           |
+
+### (2) Scope 규칙
+
+- 변경 대상 모듈 또는 영역을 명시한다.
+- 과도한 세분화는 지양한다.
+
+**Scope 예시**
+
+```
+server, ai, unity, robot, network, infra, docs
+```
+
+**사용 예**
+
+```
+feat(server): 로봇 상태 수집 API 추가
+fix(unity): 디지털 트윈 좌표 동기화 오류 수정
+refactor(ai): 경로 최적화 로직 모듈 분리
+```
+
+### (3) Subject 작성 규칙
+
+- 명령형 사용
+- 한글 사용 허용
+- 변경 목적이 명확히 드러나도록 작성
+
+**올바른 예**
+
+```
+feat(robot): emergency stop 기능 추가
+docs(system): 시스템 아키텍처 설명 보완
+```
+
+**잘못된 예**
+
+```
+수정
+버그 고침
+일단 커밋
+```
+
+---
+
+## 5.2 Commit 단위 원칙
+
+- 하나의 커밋 = 하나의 목적
+- 빌드 실패 상태에서 커밋 금지
+- 의미 없는 커밋(push용 커밋) 금지
+
+---
+
+## 5.3 Branch Strategy
+
+본 프로젝트는 다음과 같은 브랜치 전략을 따른다.
+
+```
+main        : 최종 결과물 / 시연용
+develop     : 통합 개발 브랜치
+feature/*   : 기능 개발
+```
+
+**브랜치 예시**
+
+```
+feature/unity-digital-twin
+```
+
+---
+
+## 5.4 Pull Request (PR) Rule
+
+- 모든 변경 사항은 **Pull Request(PR)** 를 통해 병합한다.
+- `main`, `develop` 브랜치에 **직접 push 금지**
+- PR 제목은 커밋 메시지 규칙과 동일하게 작성
+
+**PR 제목 예시**
+
+```
+feat(unity): 디지털 트윈 충돌 반영 기능 추가
+```
+
+---
+
+## 5.5 형상 관리 원칙 요약
+
+- 명확한 커밋 메시지를 통해 변경 목적을 추적한다.
+- PR 기반 협업으로 코드 품질과 안정성을 확보한다.
+- 프로젝트 결과물뿐 아니라 개발 과정 자체도 평가 가능한 산출물로 관리한다.
+
+---
+
